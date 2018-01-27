@@ -1,0 +1,59 @@
+﻿<Window x:Class="PlayMyLanguage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlayMyLanguage"
+        mc:Ignorable="d"
+        Title="Play My Language (MV)" Height="183" Width="495" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="173*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="7,7,7,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right"  VerticalAlignment="Center" Margin="3" Text="Game Directory"/>
+            <TextBox x:Name="GameDirectory" Grid.Row="0" Grid.Column="1" Margin="3" VerticalAlignment="Center" Height="22"/>
+            <Button x:Name="GameBrowse" Content="..." HorizontalAlignment="Center" Margin="3" VerticalAlignment="Center" Width="23" Grid.Row="0" Grid.Column="2" Height="22" Click="GameBrowse_Click"/>
+
+            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Margin="3" Grid.Row="1" Grid.Column="0" Text="Source Language"/>
+            <ComboBox x:Name="SourceLanguage" Grid.Column="1" Margin="3" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="Code"/>
+
+            <TextBlock  HorizontalAlignment="Right" VerticalAlignment="Center" Margin="3" Grid.Row="2" Grid.Column="0" Text="Target Language"/>
+            <ComboBox x:Name="TargetLanguage" Grid.Column="1" Margin="3" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="Code"/>
+        </Grid>
+
+        <Grid Margin="7,0,7,7" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Grid.Row="0" Grid.Column="0" x:Name="Status" TextWrapping="Wrap" VerticalAlignment="Center" Margin="3"/>
+            <ProgressBar x:Name="Progress" Height="20" Margin="3" Grid.Row="1" Grid.Column="0" Visibility="Hidden" />
+           
+            <Button x:Name="Play" Content="Play" Grid.Column="1" Margin="3" FontWeight="Bold" FontSize="20" Width="94" Height="42" Click="Play_Click" Grid.Row="0" Grid.RowSpan="2"/>
+        </Grid>
+
+    </Grid>
+</Window>
