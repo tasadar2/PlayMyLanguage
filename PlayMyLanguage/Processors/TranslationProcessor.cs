@@ -81,7 +81,7 @@ namespace PlayMyLanguage.Processors
             catch (Exception ex)
             {
                 OnTranslationComplete("An exception occurred during translation. Message: " + ex.Message, CompletionResult.Error);
-                File.AppendAllText("c:\\temp\\log.log", "Exception:\r\nMessage: " + ex.Message + "\r\nStackTrace: " + ex.StackTrace + "\r\n");
+                File.AppendAllText(Path.Combine(Environment.CurrentDirectory, "log.log"), "Exception:\r\nMessage: " + ex.Message + "\r\nStackTrace: " + ex.StackTrace + "\r\n");
                 throw;
             }
         }
